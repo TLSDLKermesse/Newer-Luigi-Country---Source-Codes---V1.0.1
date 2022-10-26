@@ -1,0 +1,5 @@
+---
+# New Actor COIN ROULETTE (sprite 487)
+
+source_files: [../src/rouletteCoins.cpp]
+hooks: []

@@ -1,0 +1,5 @@
+---
+# New Actor ENVIRONMENT SFX (sprite 505)
+
+source_files: [../src/environmentSFX.cpp]
+hooks: []

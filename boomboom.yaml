@@ -1,0 +1,5 @@
+---
+# New Actor SPIN BLOCK (sprite 495)
+
+source_files: [../src/boomboom.cpp]
+hooks: []

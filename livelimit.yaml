@@ -1,0 +1,8 @@
+---
+source_files: [../src/livelimit.S, ../src/livelimit.cpp]
+hooks:
+  - name: HigherAmountOfLives
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80AFA9C8
+    target_func: 'HigherAmountOfLives'

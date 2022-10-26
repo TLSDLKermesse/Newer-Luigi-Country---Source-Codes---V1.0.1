@@ -1,0 +1,5 @@
+---
+# New Actor 3-UP MOON (sprite 506)
+
+source_files: [../src/liveMoon.cpp]
+hooks: []

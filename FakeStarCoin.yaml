@@ -1,0 +1,5 @@
+---
+# New Actor FAKE STAR COIN (sprite 493)
+
+source_files: [../src/FakeStarCoin.cpp]
+hooks: []

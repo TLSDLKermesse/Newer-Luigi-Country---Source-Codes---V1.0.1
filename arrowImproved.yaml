@@ -1,0 +1,18 @@
+---
+#Replaces Actor 363 AC_KANBAN_ARROW (Sprite 310)
+
+
+source_files: [../src/arrowImproved.cpp]
+hooks:
+  - name: daHitboxArrow_cBuild
+    type: add_func_pointer
+    src_addr_pal: 0x80961F40
+    target_func: 'daHitboxArrow_c::build()'
+
+  - name: UpdatedaHitboxArrow_cSpriteInfo
+    type: patch
+    # 0x8030A340 + sprite num * 0x28 == offset
+    addr_pal: 0x8030d3b0
+    #      -ID- ----  -X Offs- -Y Offs-  -RectX1- -RectY1- -RectX2- -RectY2-  -1C- -1E- -20- -22-  Flag ----
+    data: '016B 0000  00000000 00000000  00000000 00000010 00000020 00000020  0000 0000 0000 0000  0000 0000'
+    # I hope the hitbox'll work very well. The sprite also must interact with other sprites of course.

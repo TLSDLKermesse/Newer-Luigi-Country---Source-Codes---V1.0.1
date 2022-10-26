@@ -1,0 +1,5 @@
+---
+# New Actor KAB-OMB (sprite 496)
+
+source_files: [../src/kabOmb.cpp]
+hooks: []

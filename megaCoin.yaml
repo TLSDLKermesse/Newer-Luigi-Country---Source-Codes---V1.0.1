@@ -1,0 +1,5 @@
+---
+# New Actor MEGA COIN (sprite 488)
+
+source_files: [../src/megaCoin.cpp]
+hooks: []

@@ -1,0 +1,5 @@
+---
+# New Actor SPIN BLOCK (sprite 504)
+
+source_files: [../src/spinBlock.cpp]
+hooks: []

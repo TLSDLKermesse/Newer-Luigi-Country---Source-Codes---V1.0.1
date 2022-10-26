@@ -1,0 +1,8 @@
+---
+source_files: [../src/layeredit.S]
+hooks:
+  - name: CustomZOrder
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0xAddress # Pointer to the original value
+    target_func: 'CustomZOrder'

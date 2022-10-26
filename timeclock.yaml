@@ -1,0 +1,60 @@
+---
+#Replaced Actor 275 AC_BOSS_KOOPA_RUBBLE (Sprite 481)
+
+source_files: [../src/timeclock.cpp, ../src/timeclock.S]
+hooks:
+#  - name: TimeClockBuild
+#    type: add_func_pointer
+#    src_addr_pal: 0x80955350
+#    target_func: 'daTimeClock_c::build(void)'
+
+#  - name: TimeClockSpriteFileInfo
+#    type: add_func_pointer
+#    src_addr_pal: 0x8031b2d0
+#    target_func: 'TCarcNameList'
+#    # 0x8031AB4C + sprite num * 0x4 == offset
+
+#  - name: UpdateTimeClockSpriteInfo
+#    type: patch
+    # 0x8030A340 + sprite num * 0x28 == offset
+#    addr_pal: 0x8030ee68
+    #      -ID- ----  -X Offs- -Y Offs-  -RectX1- -RectY1- -RectX2- -RectY2-  -1C- -1E- -20- -22-  Flag ----
+    # Orig 01FC 0000  00000008 00000000  00000000 FFFFFFC0 00000010 00000040  0030 0030 0000 0000  0008 0000
+#    data: '0113 0000  00000008 00000010  00000000 FFFFFFF8 00000008 00000008  0000 0000 0000 0000  0000 0000'
+
+
+
+
+#  - name: HurryUp              #change sfx
+#    type: patch
+#    addr_pal: 0x8019EA2C
+#    data: '38800500'
+    
+#  - name: HurryUp1             #change sfx
+#    type: patch
+#    addr_pal: 0x8019B8D4
+#    data: '38800500'
+    
+#  - name: HurryUp2             #change sfx
+#    type: patch
+#    addr_pal: 0x8019E664
+#    data: '38800500'
+
+  - name: DidClockRaiseSecondsOver100
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x800e3af0
+    target_func: 'TimeCmpwi100'
+
+  - name: CheckWhichSongToChooseAfterClockRaisedSecondsOver100
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x8019e138
+    target_func: 'speedSelection'
+
+  - name: selectSfx
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x8019ea2c
+    target_func: 'selectSfx'
+    
